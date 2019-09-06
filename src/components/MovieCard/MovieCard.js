@@ -19,7 +19,7 @@ class MovieCard extends Component {
         return (
 
             <Card className="card">
-                <CardActionArea>
+                {/* <CardActionArea> */}
                     <CardMedia className="image" image={this.props.movie.poster}
                     />
                     <CardContent color='secondary'>
@@ -34,7 +34,7 @@ class MovieCard extends Component {
                         <Button size="small" color="secondary">Delete</Button>
                         <Button>Details</Button>
                     </CardActions>
-                </CardActionArea>
+                {/* </CardActionArea> */}
             </Card>
 
 

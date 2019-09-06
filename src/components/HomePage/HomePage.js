@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Grid from '@material-ui/core/Grid';
 import MovieCard from '../MovieCard/MovieCard';
+import '../HomePage/HomePage.css'
 
 
 class HomePage extends Component {
@@ -12,20 +13,23 @@ class HomePage extends Component {
 
     render() {
         console.log('moviesArray :', this.props.reduxState.movies)
-        
+
         const movie = this.props.reduxState.movies.map((movie, index) => {
-                return (
-                    <Grid key={index} item>
+            return (
+                
+                    <Grid key={index} item xs={4}>
                         <MovieCard movie={movie}></MovieCard>
                     </Grid>
-                )
-            }
+                
             )
-        
+        }
+
+        )
+
         return (
-            <div>
+            <Grid container spacing={8}>
                 {movie}
-            </div>
+            </Grid>
         );
     }
 
