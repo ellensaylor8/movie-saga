@@ -24,7 +24,6 @@ class HomePage extends Component {
         
         return (
             <div>
-                <h1>Movie Library</h1>
                 {movie}
             </div>
         );
