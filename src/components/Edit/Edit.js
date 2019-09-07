@@ -11,19 +11,30 @@ import {
     TextField
 } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
+import { stat } from 'fs';
 
 function Edit(props) {
 
-    const handleChange = () => {
-        console.log('test');
+    let updatedMovie = {
+        id: 0,
+        title: '',
+        description: '',
     }
 
+    const handleChange = (event, movieKey) => {
+        updatedMovie.id = props.match.params.id
+        updatedMovie[movieKey] = event.target.value
+    }
+
+
     const handleCancel = () => {
-        props.history.push('/detail/'+props.match.params.id)
+        props.history.push('/detail/' + props.match.params.id)
     }
 
     const handleSave = () => {
-        props.history.push('/detail/'+props.match.params.id)
+        // console.log(props.match.params)
+        props.dispatch({ type: 'PUT_MOVIE', payload: updatedMovie});
+        props.history.push('/detail/' + props.match.params.id)
     }
 
     return (
@@ -32,12 +43,12 @@ function Edit(props) {
                 <TextField
                     label="Change Movie Title"
                     // value={}
-                    onChange={handleChange('title')}
+                    onChange={(event) => handleChange(event, 'title')}
                 />
                 <TextField
                     label="Change Movie Description"
                     // value={values.name}
-                    onChange={handleChange('description')}
+                    onChange={(event) => handleChange(event, 'description')}
                 />
             </form>
             <Button onClick={handleCancel}>CANCEL</Button>

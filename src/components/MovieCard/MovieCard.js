@@ -15,7 +15,7 @@ import { withRouter } from 'react-router-dom';
 class MovieCard extends Component {
 
     goToDetail = () => {
-        this.props.history.push('/detail/'+this.props.movie.id);
+        this.props.history.push('/detail/'+this.props.movie.movie_id);
     }
 
     render() {
@@ -35,7 +35,6 @@ class MovieCard extends Component {
                         </Typography>
                     </CardContent>
                     <CardActions>
-                        <Button size="small" color="secondary">Delete</Button>
                         <Button onClick={this.goToDetail}>Details</Button>
                     </CardActions>
                 {/* </CardActionArea> */}

@@ -12,8 +12,9 @@ import {
 import { withRouter } from 'react-router-dom';
 
 function Details(props) {
+    console.log(props.reduxState.movies)
     const movieInfo = props.reduxState.movies.filter((movie, index) => {
-        return movie.id == props.match.params.id
+        return movie.movie_id == props.match.params.id
     })
 
     const returnToHome = () => {
