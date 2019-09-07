@@ -17,7 +17,7 @@ class HomePage extends Component {
         const movie = this.props.reduxState.movies.map((movie, index) => {
             return (
                 
-                    <Grid key={index} item xs={4}>
+                    <Grid key={index} item xs={2}>
                         <MovieCard movie={movie}></MovieCard>
                     </Grid>
                 
