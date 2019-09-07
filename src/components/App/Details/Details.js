@@ -14,8 +14,9 @@ function Details(props){
         return (
             <div>
                 <h1>Details</h1>
-                <p>{movieInfo[0].title}</p>
-                <p>{movieInfo[0].description}</p>
+                <p>Title: <i>{movieInfo[0].title}</i></p>
+                <p>Genre: <i>{movieInfo[0].name}</i></p>
+                <p>Description: <i>{movieInfo[0].description}</i></p>
             </div>
         );
     }
