@@ -13,7 +13,6 @@ class HomePage extends Component {
 
     render() {
         console.log('moviesArray :', this.props.reduxState.movies)
-
         const movie = this.props.reduxState.movies.map((movie, index) => {
             return (
                 

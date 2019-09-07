@@ -1,11 +1,32 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-class Details extends Component {
-    render() {
+
+// function Details(props) {
+function Details(props){
+    // componentDidMount(){
+    //     console.log(this.props.reduxState.movies)
+    // }
+    // render() {
+        
+        const movieInfo = props.reduxState.movies.filter((movie, index) => {
+            console.log(movie, 'haaa!');
+
+            return movie.id == props.match.params.id
+
+        })
+        console.log('movieInfo: ',movieInfo)
         return (
-            <div>Details</div>
+            <div>
+                <h1>Details</h1>
+                <p>{movieInfo[0].title}</p>
+            </div>
         );
     }
-}
 
-export default Details;
+
+const mapStateToProps = reduxState => ({
+    reduxState,
+});
+
+export default connect(mapStateToProps)(Details);

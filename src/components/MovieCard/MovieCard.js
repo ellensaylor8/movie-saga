@@ -15,7 +15,7 @@ import { withRouter } from 'react-router-dom';
 class MovieCard extends Component {
 
     goToDetail = () => {
-        this.props.history.push('/details');
+        this.props.history.push('/detail/'+this.props.movie.id);
     }
 
     render() {

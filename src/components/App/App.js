@@ -12,7 +12,7 @@ class App extends Component {
         <h1>Movie Library</h1>
         <Router>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/detail" component={Details} />
+          <Route exact path="/detail/:id" component={Details} />
         </Router>
       </div>
     );
