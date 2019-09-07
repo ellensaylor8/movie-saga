@@ -4,11 +4,6 @@ import { connect } from 'react-redux';
 
 // function Details(props) {
 function Details(props){
-    // componentDidMount(){
-    //     console.log(this.props.reduxState.movies)
-    // }
-    // render() {
-        
         const movieInfo = props.reduxState.movies.filter((movie, index) => {
             console.log(movie, 'haaa!');
 
@@ -20,6 +15,7 @@ function Details(props){
             <div>
                 <h1>Details</h1>
                 <p>{movieInfo[0].title}</p>
+                <p>{movieInfo[0].description}</p>
             </div>
         );
     }

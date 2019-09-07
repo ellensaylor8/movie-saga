@@ -68,3 +68,7 @@ VALUES
 ('Space-Opera'),
 ('Superhero');
 
+-- SELECTs all peeps and related hobbies
+SELECT * FROM "movies"
+JOIN "movies_genres" ON "movies".id = "movies_genres".movie_id
+JOIN "genres" ON "movies_genres".genre_id = "genres".id;
