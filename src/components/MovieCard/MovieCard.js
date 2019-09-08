@@ -14,6 +14,7 @@ import { withRouter } from 'react-router-dom';
 
 class MovieCard extends Component {
 
+    //route to detail page with id specific to movie
     goToDetail = () => {
         this.props.history.push('/detail/'+this.props.movie.movie_id);
     }
@@ -26,7 +27,7 @@ class MovieCard extends Component {
                 {/* <CardActionArea> */}
                     <CardMedia className="image" image={this.props.movie.poster}
                     />
-                    <CardContent color='secondary'>
+                    <CardContent className="cardContent" color='secondary'>
                         <Typography gutterBottom variant="h5" component="h2">
                             {this.props.movie.title}
                         </Typography>
