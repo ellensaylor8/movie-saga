@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import './Edit.css';
 import {
     // Card,
     // CardContent,
@@ -10,10 +11,12 @@ import {
     // Typography,
     TextField
 } from '@material-ui/core';
+
 import { withRouter } from 'react-router-dom';
-import { stat } from 'fs';
 
 function Edit(props) {
+
+    const [inputText, updateText] = useState('')
 
     let updatedMovie = {
         id: 0,
@@ -24,6 +27,7 @@ function Edit(props) {
     const handleChange = (event, movieKey) => {
         updatedMovie.id = props.match.params.id
         updatedMovie[movieKey] = event.target.value
+        updateText(event.target.value)
     }
 
 
@@ -33,26 +37,26 @@ function Edit(props) {
 
     const handleSave = () => {
         // console.log(props.match.params)
-        props.dispatch({ type: 'PUT_MOVIE', payload: updatedMovie});
+        props.dispatch({ type: 'PUT_MOVIE', payload: updatedMovie });
         props.history.push('/detail/' + props.match.params.id)
     }
 
     return (
         <div>
             <form className="movieEditor" noValidate autoComplete="off">
+
                 <TextField
                     label="Change Movie Title"
-                    // value={}
                     onChange={(event) => handleChange(event, 'title')}
                 />
                 <TextField
                     label="Change Movie Description"
-                    // value={values.name}
                     onChange={(event) => handleChange(event, 'description')}
                 />
             </form>
             <Button onClick={handleCancel}>CANCEL</Button>
             <Button onClick={handleSave}>SAVE</Button>
+            <p>{inputText}</p>
         </div>
     )
 }

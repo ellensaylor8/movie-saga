@@ -12,6 +12,8 @@ import createSagaMiddleware from 'redux-saga';
 import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
 
+import { BrowserRouter } from "react-router-dom";
+
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('GET_MOVIES', getMovies);
@@ -77,6 +79,6 @@ const storeInstance = createStore(
 // Pass rootSaga into our sagaMiddleware
 sagaMiddleware.run(rootSaga);
 
-ReactDOM.render(<Provider store={storeInstance}><App /></Provider>,
+ReactDOM.render(<Provider store={storeInstance}><BrowserRouter><App /></BrowserRouter></Provider>,
     document.getElementById('root'));
 registerServiceWorker();

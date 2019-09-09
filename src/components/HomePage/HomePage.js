@@ -4,7 +4,6 @@ import Grid from '@material-ui/core/Grid';
 import MovieCard from '../MovieCard/MovieCard';
 import '../HomePage/HomePage.css'
 
-
 class HomePage extends Component {
 
     //executes get request on page load
