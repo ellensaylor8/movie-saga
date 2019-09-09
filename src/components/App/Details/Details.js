@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import '../Details/Details.css'
 import {
     Card,
     CardContent,
@@ -18,6 +19,12 @@ function Details(props) {
         return movie.movie_id == props.match.params.id
     })
 
+    const genreArray = movieInfo[0].array_agg.map((genre, index) => {
+        return <p className="genre" key={index}>{genre}</p> 
+    })
+
+    console.log(genreArray)
+
     //route to home page
     const returnToHome = () => {
         props.history.push('/')
@@ -33,7 +40,7 @@ function Details(props) {
             <h1>Details</h1>
             <Card>
                 <Typography gutterBottom variant="h5" component="h2">{movieInfo[0].title}</Typography>
-                <Typography>{movieInfo[0].array_agg}</Typography>
+                <Typography><div>{genreArray}</div></Typography>
                 <Typography variant="body2" color="textSecondary" component="p">{movieInfo[0].description}</Typography>
                 <Button onClick={returnToHome}>Back</Button>
                 <Button onClick={Edit}>Edit</Button>
