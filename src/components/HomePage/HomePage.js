@@ -9,6 +9,7 @@ class HomePage extends Component {
     //executes get request on page load
     componentDidMount() {
         this.props.dispatch({ type: 'GET_MOVIES' })
+        this.props.dispatch({ type: 'GET_GENRES' })
     }
 
     //render loops through movie array from reducer and sends movie object to MovieCard
@@ -20,10 +21,8 @@ class HomePage extends Component {
                 <Grid key={index} item xs={2}>
                     <MovieCard movie={movie}></MovieCard>
                 </Grid>
-
             )
         }
-
         )
 
         return (

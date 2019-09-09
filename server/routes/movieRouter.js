@@ -4,7 +4,8 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    const queryText = 'SELECT * FROM "movies" JOIN "movies_genres" ON "movies".id = "movies_genres".movie_id JOIN "genres" ON "movies_genres".genre_id = "genres".id';
+  const queryText =  'SELECT "movie_id","title","poster","description", array_agg("name") FROM "movies" JOIN "movies_genres" ON "movies_genres".movie_id="movies".id JOIN "genres" ON "movies_genres".genre_id="genres".id GROUP BY "movie_id","title","poster","description"';
+    // const queryText = 'SELECT * FROM "movies" JOIN "movies_genres" ON "movies".id = "movies_genres".movie_id JOIN "genres" ON "movies_genres".genre_id = "genres".id';
         pool.query(queryText)
         .then((result) => { res.send(result.rows); })
         .catch((err) => {
@@ -12,6 +13,10 @@ router.get('/', (req, res) => {
             res.sendStatus(500)
         });
 });
+
+'SELECT "movie_id","title","poster","description", array_agg("name") FROM "movies" JOIN "movies_genres" ON "movies_genres".movie_id="movies".id JOIN "genres" ON "movies_genres".genre_id="genres".id GROUP BY "movie_id","title","poster","description"'
+
+
 
 router.put('/', (req, res) => {
     const updatedMovie = req.body;

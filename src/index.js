@@ -17,6 +17,7 @@ import { BrowserRouter } from "react-router-dom";
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('GET_MOVIES', getMovies);
+    yield takeEvery('GET_GENRES', getGenres);
     yield takeEvery('PUT_MOVIE', putMovies);
 }
 
@@ -28,6 +29,17 @@ function* getMovies() {
     }
     catch (err) {
         console.log('ERROR IN GET MOVIES', err);
+    }
+}
+
+//saga to GET GENRES
+function* getGenres() {
+    try {
+        const response = yield axios.get('/api/movie');
+        yield put({ type: 'SET_GENRES', payload: response.data });
+    }
+    catch (err) {
+        console.log('ERROR IN GET GENRES', err);
     }
 }
 

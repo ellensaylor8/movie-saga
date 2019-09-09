@@ -13,7 +13,7 @@ import { withRouter } from 'react-router-dom';
 
 //filters movie array from reducer to move that matches incoming movie id coming in through route
 function Details(props) {
-    console.log(props.reduxState.movies)
+    console.log(props.match.params)
     const movieInfo = props.reduxState.movies.filter((movie, index) => {
         return movie.movie_id == props.match.params.id
     })
@@ -33,7 +33,7 @@ function Details(props) {
             <h1>Details</h1>
             <Card>
                 <Typography gutterBottom variant="h5" component="h2">{movieInfo[0].title}</Typography>
-                <Typography>{movieInfo[0].name}</Typography>
+                <Typography>{movieInfo[0].array_agg}</Typography>
                 <Typography variant="body2" color="textSecondary" component="p">{movieInfo[0].description}</Typography>
                 <Button onClick={returnToHome}>Back</Button>
                 <Button onClick={Edit}>Edit</Button>
