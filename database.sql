@@ -68,7 +68,9 @@ VALUES
 ('Space-Opera'),
 ('Superhero');
 
--- SELECTs all peeps and related hobbies
-SELECT * FROM "movies"
-JOIN "movies_genres" ON "movies".id = "movies_genres".movie_id
-JOIN "genres" ON "movies_genres".genre_id = "genres".id;
+-- SELECTs all movies and groups genres into array
+SELECT "movie_id","title","poster","description", array_agg("name")
+FROM "movies"
+JOIN "movies_genres" ON "movies_genres".movie_id="movies".id
+JOIN "genres" ON "movies_genres".genre_id="genres".id
+GROUP BY "movie_id","title","poster","description"
