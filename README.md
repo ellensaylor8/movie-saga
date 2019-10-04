@@ -4,29 +4,27 @@ This application lists movies along with their title and descriptions and allows
 ## Screen Shot
 ![Screen shot of project](https://github.com/ellensaylor8/movie-saga/blob/master/public/images/screen_shot.png)
 
-## Screen Shot
+## Prerequisites
+- https://nodejs.org/en/ - automatic![Node.js](https://nodejs.org/en/)
+- https://eggerapps.at/postico/ - automatic![Node.js](https://eggerapps.at/postico/)
 
-## Database Setup
-Database named `saga_movies_weekend` set up in Postico. Reference database.sql to view setup, tables, queries and input values.
+## Installation/Setup
+1. Create a database in Postico named [your database name]
+2. Within Postico, execute the sql found in database.sql. This should set up all tables and insert all data necessary to spin up project
+3. Within your GUI run `npm install`
+4. Run `npm run server` to start up express server
+5. Run `npm run client` to start up front end in browser (should automatically open new browser tab for you)
 
+## Usage
+1. Select the `Details` button on any of the movie cards to navigate to a detail page with a full description of the respective movie
+2. Within the Details page, select `Edit` to change either the title or description of the movie
+3. If you are happy with your edit, selecting save will update this data in the database and navigate you back to the home page to view your updated title/description
 
-### Home / List Page
+## Built With
 
-Displays movie library with button to navigate to details per film
+- React
+- Material UI
+- Express
 
-### Details Page
-
-Shows details of film and allows user to return to home page or navigate to edit page to update title and/or description of film.
-
-### Edit Page
-
-Allows user to edit title and description of movie. Clicking save sends update to database and re-renders updated details. Clicking save returns user to detail page with no changes sent to database.
-
-## To-Do
-
-- [ ] Move sagas and reducers out of your `index.js` and into separate files (ideally in `src/redux/reducers` and `src/redux/sagas` folders).
-- [ ] Allow the user to refresh the details or edit page. The url for the details page would be something like `/details/1` for movie with id of `1`. Research [react router params](https://reacttraining.com/react-router/web/example/url-params).
-- [ ] Allow the user to add a genre to a movie.
-- [ ] Allow the user to remove a genre from a movie.
-- [ ] Only display the top 10 movies, and allow the user to search for movie titles with a search bar on the home page (you can do this on the client side or the server side, server side is a bigger stretch, but good practice).
-- [ ] Create an `Admin` page. Add a link from the `Home` page to the `Admin` page. The page should initially display a login form (an input for username and an input for password). When the user enters the correct username (`camera`) and password (`action`), the page should display a form to add genres to the database, and a list of all of the genres with an `x` to remove them from the database. Note: This isn't actually secure, but it's pretty fun, and really good practice.
+## Acknowledgement
+Thanks to Prime Digital Academy in Kansas City for teaching me the tools necessary to stand up this application!
