@@ -6,7 +6,8 @@ This application lists movies along with their title and descriptions and allows
 
 ## Prerequisites
 - [Node.js](https://nodejs.org/en/)
-- [Postico](https://eggerapps.at/postico/)
+- [PostrgreSQL](https://www.postgresql.org/)
+- [Nodemon](https://nodemon.io/)
 
 ## Installation/Setup
 1. Create a database in Postico named [your database name]
