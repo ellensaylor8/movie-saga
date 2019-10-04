@@ -2,7 +2,7 @@
 This application lists movies along with their title and descriptions and allows user to update these details stored in a Postico database
 
 ## Screen Shot
-![Screen shot of project](https://github.com/ellensaylor8/movie-saga/blob/master/public/images/avatar.jpeg)
+![Screen shot of project](https://github.com/ellensaylor8/movie-saga/blob/master/public/images/screen_shot.png)
 
 ## Screen Shot
 
