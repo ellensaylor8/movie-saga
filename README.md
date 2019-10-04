@@ -2,7 +2,7 @@
 This application lists movies along with their title and descriptions and allows user to update these details stored in a Postico database
 
 ## Screen Shot
-'/images/screen_shot.png'
+/images/screen_shot.png
 
 ## Database Setup
 Database named `saga_movies_weekend` set up in Postico. Reference database.sql to view setup, tables, queries and input values.
