@@ -5,8 +5,8 @@ This application lists movies along with their title and descriptions and allows
 ![Screen shot of project](https://github.com/ellensaylor8/movie-saga/blob/master/public/images/screen_shot.png)
 
 ## Prerequisites
-- https://nodejs.org/en/ - automatic![Node.js](https://nodejs.org/en/)
-- https://eggerapps.at/postico/ - automatic![Node.js](https://eggerapps.at/postico/)
+- [Node.js](https://nodejs.org/en/)
+- [Postico](https://eggerapps.at/postico/)
 
 ## Installation/Setup
 1. Create a database in Postico named [your database name]
@@ -27,4 +27,4 @@ This application lists movies along with their title and descriptions and allows
 - Express
 
 ## Acknowledgement
-Thanks to Prime Digital Academy in Kansas City for teaching me the tools necessary to stand up this application!
+Thanks to [Prime Digital Academy](www.primeacademy.io) in Kansas City for teaching me the tools necessary to stand up this application!
